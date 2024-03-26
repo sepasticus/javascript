@@ -6,7 +6,25 @@
     <script>
 // Min JS skrives herunder
 
+let navn = prompt("Indtast venligst dit navn");
+let score;
+    // Fortsætter med at prompte brugeren indtil der er et gyldigt tal mellem 1 og 10.
+    do {
+        score = prompt("På en skala fra 1-10, hvor højt står du i det sociale hierarki?");
+        // Undersøger om brugerens input er et tal og inden for 1-10 rangeringen
+    } while (isNaN(score) || score < 1 || score > 10);
 
+let velkomst = `${navn}, du er top ${Math.abs((score/10)*100-100)}% i samfundet.`;
+let topScore = `${navn}, du er fandme en top lobster`;
+let bundScore = `Vil Pivert venligst forlade min test`;
+
+if (score == 10) {
+    alert(topScore);
+} else if (score == 1){
+    alert(bundScore)
+} else {
+    alert(velkomst)
+}
 
 
     </script>
